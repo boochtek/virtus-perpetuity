@@ -1,6 +1,6 @@
 # Virtus::Perpetuity
 
-This gem will allow you to use Virtus to define model attributes that will work well with Perpetuity.
+This gem will allow you to use Virtus to define attributes for models that are mapped with Perpetuity.
 It will also automatically generate the mapper for your mode.
 
 
