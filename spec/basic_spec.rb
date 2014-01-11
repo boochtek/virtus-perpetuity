@@ -1,8 +1,9 @@
 require 'virtus/perpetuity'
-require 'perpetuity'
+require 'perpetuity/memory'
 
 describe 'Including Virtus::Perpetuity.model' do
   before do
+    Perpetuity.data_source :memory
     module Examples
       class User
         include Virtus::Perpetuity.model
