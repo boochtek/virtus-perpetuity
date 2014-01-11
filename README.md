@@ -37,15 +37,10 @@ class User
 end
 ```
 
-Once you've defined your model, a Perpetuity mapping will be created for you, and you can then use Perpetuity as you normally would:
+Once you've defined your model, a Perpetuity mapping will be created for you automatically,
+and you can then use Perpetuity as you would without Virtus:
 
 ```ruby
-class User
-  include Virtus::Perpetuity.model
-  attribute :name, String, from: :first_name
-  attribute :age, Integer, required: false
-end
-
 Perpetuity[User].insert(User.new(name: 'Craig'))
 craig = Perpetuity[User].find{|user| user.name == 'Craig'}
 ```

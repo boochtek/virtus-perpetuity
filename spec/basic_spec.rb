@@ -21,4 +21,9 @@ describe 'Including Virtus::Perpetuity.model' do
   it 'creates a mapping' do
     expect(Perpetuity[Examples::User]).not_to be_nil
   end
+
+  it 'creates a mapping with the correct attributes' do
+    expect(Perpetuity[Examples::User].attributes).to include(:name)
+    expect(Perpetuity[Examples::User].attributes).to include(:age)
+  end
 end
