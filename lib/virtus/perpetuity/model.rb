@@ -15,8 +15,22 @@ module Virtus
           add_attribute_to_mapper(name, options, type)
         end
 
+        def index(name, options = {})
+          add_index_to_mapper(name, options)
+        end
+
+        private
+
         def add_attribute_to_mapper(name, options, type)
-          ::Perpetuity.mapper_registry[self].attribute_set << ::Perpetuity::Attribute.new(name, type, options)
+          mapper.attribute_set << ::Perpetuity::Attribute.new(name, type, options)
+        end
+
+        def add_index_to_mapper(name, options)
+          mapper.class.index name, options
+        end
+
+        def mapper
+          ::Perpetuity.mapper_registry[self]
         end
       end
     end

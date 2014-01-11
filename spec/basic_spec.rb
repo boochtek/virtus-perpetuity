@@ -10,6 +10,8 @@ describe 'Including Virtus::Perpetuity.model' do
 
         attribute :name, String
         attribute :age,  Integer
+
+        index :age
       end
     end
   end
@@ -25,5 +27,9 @@ describe 'Including Virtus::Perpetuity.model' do
   it 'creates a mapping with the correct attributes' do
     expect(Perpetuity[Examples::User].attributes).to include(:name)
     expect(Perpetuity[Examples::User].attributes).to include(:age)
+  end
+
+  it 'creates indexes' do
+    expect(Perpetuity[Examples::User].indexes.map(&:name)).to include(:age)
   end
 end

@@ -48,7 +48,6 @@ craig = Perpetuity[User].find{|user| user.name == 'Craig'}
 
 ## TODO
 
-* Allow specifying indexes.
 * Allow specifying how IDs are generated.
 * Allow mapping object attributes to different DB fields (once Perpetuity supports that).
 * Allow specifying an alternative mapper (once Perpetuity supports that).
