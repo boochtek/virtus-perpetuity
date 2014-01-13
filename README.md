@@ -48,6 +48,7 @@ craig = Perpetuity[User].find{|user| user.name == 'Craig'}
 
 ## TODO
 
+* Should we add methods to test equality of 2 objects?
 * Allow specifying how IDs are generated.
 * Allow mapping object attributes to different DB fields (once Perpetuity supports that).
 * Allow specifying an alternative mapper (once Perpetuity supports that).
@@ -59,6 +60,7 @@ craig = Perpetuity[User].find{|user| user.name == 'Craig'}
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+3. Make sure tests pass (`rspec` or `rake spec`)
+4. Commit your changes (`git commit -am 'Add some feature'`)
+5. Push to the branch (`git push origin my-new-feature`)
+6. Create new Pull Request
